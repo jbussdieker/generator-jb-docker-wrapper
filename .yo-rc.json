@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Joshua Bussdieker",
+      "authorEmail": "jbussdieker@gmail.com",
+      "authorUrl": "github.com/jbussdieker"
+    }
+  }
+}
