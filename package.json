@@ -1,6 +1,6 @@
 {
   "name": "generator-jb-docker-wrapper",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Docker wrapper project generator",
   "homepage": "https://github.com/jbussdieker/generator-jb-docker-wrapper#readme",
   "author": {
