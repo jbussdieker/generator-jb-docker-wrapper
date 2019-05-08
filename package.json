@@ -35,7 +35,7 @@
   "dependencies": {
     "generator-jb-docker": "^1.0.0",
     "generator-jb-jenkinsfile": "^1.0.0",
-    "yeoman-generator": "^2.0.1",
+    "yeoman-generator": "^3.2.0",
     "chalk": "^2.1.0",
     "yosay": "^2.0.1"
   },
