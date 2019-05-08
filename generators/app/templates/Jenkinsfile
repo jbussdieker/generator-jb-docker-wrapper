@@ -31,7 +31,7 @@ node {
       image.push()
       if (<%= name %>Version == latest)
         image.push('latest')
-      else if (<%= name %>Version == stable)
+      if (<%= name %>Version == stable)
         image.push('stable')
     }
   }
