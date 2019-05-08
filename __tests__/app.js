@@ -11,6 +11,6 @@ describe('generator-jb-docker-wrapper:app', () => {
   });
 
   it('creates files', () => {
-    assert.file(['dummyfile.txt']);
+    assert.file(['Jenkinsfile', 'Dockerfile']);
   });
 });

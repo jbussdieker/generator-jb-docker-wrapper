@@ -1,0 +1,12 @@
+FROM <%= sourceImage %>
+
+RUN apt-get -y update && \
+  apt-get -y install curl unzip
+
+ARG <%= name %>_version
+
+RUN : "${<%= name %>_version:?Must specify version}"
+
+RUN curl -OL https://releases.hashicorp.com/<%= name %>/${<%= name %>_version}/<%= name %>_${<%= name %>_version}_linux_amd64.zip && \
+  unzip <%= name %>_${<%= name %>_version}_linux_amd64.zip && \
+  mv <%= name %> /usr/local/bin/<%= name %>

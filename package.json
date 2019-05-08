@@ -33,6 +33,8 @@
     "npm": ">= 4.0.0"
   },
   "dependencies": {
+    "generator-jb-docker": "^1.0.0",
+    "generator-jb-jenkinsfile": "^1.0.0",
     "yeoman-generator": "^2.0.1",
     "chalk": "^2.1.0",
     "yosay": "^2.0.1"
@@ -60,7 +62,13 @@
       "node": true
     },
     "rules": {
-      "prettier/prettier": "error"
+      "prettier/prettier": [
+        "error",
+        {
+          "singleQuote": true,
+          "printWidth": 90
+        }
+      ]
     },
     "plugins": [
       "prettier"

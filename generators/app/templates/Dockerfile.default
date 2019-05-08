@@ -1,0 +1,10 @@
+FROM <%= sourceImage %>
+
+#RUN apt-get -y update && \
+#  apt-get -y install REQUIRED_PACKAGES
+
+ARG <%= name %>_version
+
+RUN : "${<%= name %>_version:?Must specify version}"
+
+RUN echo TODO: Install <%= name %>

@@ -1,0 +1,38 @@
+#!groovy
+latest = "<%= latestVersion %>"
+stable = "<%= stableVersion %>"
+
+properties([
+  parameters([
+    string(defaultValue: '<%= stableVersion %>', description: 'Version', name: 'Version')
+  ])
+])
+
+node {
+  <%= name %>Version = params.Version
+  credentialsId = 'docker-hub-credentials'
+
+  stage('clone') {
+    checkout scm
+  }
+
+  stage('build') {
+    image = docker.build("jbussdieker/<%= name %>:${<%= name %>Version}", "--build-arg <%= name %>_version=${<%= name %>Version} .")
+  }
+
+  stage('test') {
+    image.inside {
+      sh "<%= name %> version | grep ${<%= name %>Version}"
+    }
+  }
+
+  stage('publish') {
+    docker.withRegistry("", credentialsId) {
+      image.push()
+      if (<%= name %>Version == latest)
+        image.push('latest')
+      else if (<%= name %>Version == stable)
+        image.push('stable')
+    }
+  }
+}
